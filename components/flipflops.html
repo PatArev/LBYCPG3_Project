@@ -1,0 +1,153 @@
+<HTML>
+    <HEAD>
+        <TITLE>Flip-Flops</TITLE>
+        <LINK REL="stylesheet" TYPE="text/css" HREF="flipflops.css">
+        <LINK REL="stylesheet" HREF="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    </HEAD>
+    <BODY>
+        <DIV CLASS="container my-4">
+            <CENTER>
+                <H2>FLIP-FLOPS</H2>
+                <P>Click a flip-flop to jump to its section:</P>
+                <DIV CLASS="row justify-content-center">
+                    <DIV CLASS="col-3 text-center">
+                        <A HREF="#sr" CLASS="btn btn-primary m-1">SR</A>
+                    </DIV>
+                    <DIV CLASS="col-3 text-center">
+                        <A HREF="#d" CLASS="btn btn-primary m-1">D</A>
+                    </DIV>
+                    <DIV CLASS="col-3 text-center">
+                        <A HREF="#jk" CLASS="btn btn-primary m-1">JK</A>
+                    </DIV>
+                    <DIV CLASS="col-3 text-center">
+                        <A HREF="#t" CLASS="btn btn-primary m-1">T</A>
+                    </DIV>
+                </DIV>
+            </CENTER>
+
+            <HR>
+
+            <!-- SR Flip-Flop Section -->
+            <DIV ID="sr" CLASS="flipflop-section my-4">
+                <H3>SR FLIP-FLOP</H3>
+                <DIV CLASS="row">
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Symbol:</B><BR>
+                        <IMG SRC="sr_symbol.png" ALT="SR Symbol" CLASS="img-fluid">
+                    </DIV>
+                    <DIV CLASS="col-md-4">
+                        <B>Algebraic Function:</B> Q(next) = S + (¬R · Q)<BR><BR>
+                        <B>Truth Table:</B>
+                        <TABLE CLASS="table table-bordered">
+                            <THEAD>
+                                <TR><TH>S</TH><TH>R</TH><TH>Q(next)</TH></TR>
+                            </THEAD>
+                            <TBODY>
+                                <TR><TD>0</TD><TD>0</TD><TD>Q</TD></TR>
+                                <TR><TD>0</TD><TD>1</TD><TD>0</TD></TR>
+                                <TR><TD>1</TD><TD>0</TD><TD>1</TD></TR>
+                                <TR><TD>1</TD><TD>1</TD><TD>Invalid</TD></TR>
+                            </TBODY>
+                        </TABLE>
+                    </DIV>
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Circuit Implementation:</B><BR>
+                        <IMG SRC="sr_circuit.png" ALT="SR Circuit" CLASS="img-fluid">
+                    </DIV>
+                </DIV>
+            </DIV>
+
+            <HR>
+
+            <!-- D Flip-Flop Section -->
+            <DIV ID="d" CLASS="flipflop-section my-4">
+                <H3>D FLIP-FLOP</H3>
+                <DIV CLASS="row">
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Symbol:</B><BR>
+                        <IMG SRC="d_symbol.png" ALT="D Flip-Flop Symbol" CLASS="img-fluid">
+                    </DIV>
+                    <DIV CLASS="col-md-4">
+                        <B>Algebraic Function:</B> Q(next) = D<BR><BR>
+                        <B>Truth Table:</B>
+                        <TABLE CLASS="table table-bordered">
+                            <THEAD>
+                                <TR><TH>D</TH><TH>Q(next)</TH></TR>
+                            </THEAD>
+                            <TBODY>
+                                <TR><TD>0</TD><TD>0</TD></TR>
+                                <TR><TD>1</TD><TD>1</TD></TR>
+                            </TBODY>
+                        </TABLE>
+                    </DIV>
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Circuit Implementation:</B><BR>
+                        <IMG SRC="d_circuit.png" ALT="D Flip-Flop Circuit" CLASS="img-fluid">
+                    </DIV>
+                </DIV>
+            </DIV>
+
+            <HR>
+
+            <!-- JK Flip-Flop Section -->
+            <DIV ID="jk" CLASS="flipflop-section my-4">
+                <H3>JK FLIP-FLOP</H3>
+                <DIV CLASS="row">
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Symbol:</B><BR>
+                        <IMG SRC="jk_symbol.png" ALT="JK Flip-Flop Symbol" CLASS="img-fluid">
+                    </DIV>
+                    <DIV CLASS="col-md-4">
+                        <B>Algebraic Function:</B> Q(next) = J·(¬Q) + (¬K)·Q<BR><BR>
+                        <B>Truth Table:</B>
+                        <TABLE CLASS="table table-bordered">
+                            <THEAD>
+                                <TR><TH>J</TH><TH>K</TH><TH>Q(next)</TH></TR>
+                            </THEAD>
+                            <TBODY>
+                                <TR><TD>0</TD><TD>0</TD><TD>Q</TD></TR>
+                                <TR><TD>0</TD><TD>1</TD><TD>0</TD></TR>
+                                <TR><TD>1</TD><TD>0</TD><TD>1</TD></TR>
+                                <TR><TD>1</TD><TD>1</TD><TD>Toggle</TD></TR>
+                            </TBODY>
+                        </TABLE>
+                    </DIV>
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Circuit Implementation:</B><BR>
+                        <IMG SRC="jk_circuit.png" ALT="JK Circuit" CLASS="img-fluid">
+                    </DIV>
+                </DIV>
+            </DIV>
+
+            <HR>
+
+            <!-- T Flip-Flop Section -->
+            <DIV ID="t" CLASS="flipflop-section my-4">
+                <H3>T FLIP-FLOP</H3>
+                <DIV CLASS="row">
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Symbol:</B><BR>
+                        <IMG SRC="t_symbol.png" ALT="T Flip-Flop Symbol" CLASS="img-fluid">
+                    </DIV>
+                    <DIV CLASS="col-md-4">
+                        <B>Algebraic Function:</B> Q(next) = T ⊕ Q<BR><BR>
+                        <B>Truth Table:</B>
+                        <TABLE CLASS="table table-bordered">
+                            <THEAD>
+                                <TR><TH>T</TH><TH>Q(next)</TH></TR>
+                            </THEAD>
+                            <TBODY>
+                                <TR><TD>0</TD><TD>Q</TD></TR>
+                                <TR><TD>1</TD><TD>Toggle</TD></TR>
+                            </TBODY>
+                        </TABLE>
+                    </DIV>
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Circuit Implementation:</B><BR>
+                        <IMG SRC="t_circuit.png" ALT="T Flip-Flop Circuit" CLASS="img-fluid">
+                    </DIV>
+                </DIV>
+            </DIV>
+        </DIV>
+    </BODY>
+</HTML>

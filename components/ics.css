@@ -1,0 +1,18 @@
+BODY {
+    FONT-FAMILY: Arial, sans-serif;
+    BACKGROUND-COLOR: #f8f9fa;
+    MARGIN: 0;
+    PADDING: 0;
+}
+
+.component-section {
+    BACKGROUND-COLOR: #fff;
+    BORDER: 1px solid #ddd;
+    PADDING: 15px;
+    BOX-SHADOW: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.component-section H3 {
+    TEXT-ALIGN: center;
+    MARGIN-bottom: 20px;
+}

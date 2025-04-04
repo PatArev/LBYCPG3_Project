@@ -1,0 +1,294 @@
+<HTML>
+    <HEAD>
+        <TITLE>Logic Gates</TITLE>
+        <LINK REL="stylesheet" TYPE="text/css" HREF="gates.css">
+        <LINK REL="stylesheet" HREF="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    </HEAD>
+    <BODY>
+        <DIV CLASS="container my-4">
+            <CENTER>
+                <H2>LOGIC GATES</H2>
+                <P>Click a gate to jump to its section:</P>
+                <DIV CLASS="row justify-content-center">
+                    <DIV CLASS="col-3 text-center">
+                        <A HREF="#and" CLASS="btn btn-primary m-1">AND</A>
+                    </DIV>
+                    <DIV CLASS="col-3 text-center">
+                        <A HREF="#or" CLASS="btn btn-primary m-1">OR</A>
+                    </DIV>
+                    <DIV CLASS="col-3 text-center">
+                        <A HREF="#nand" CLASS="btn btn-primary m-1">NAND</A>
+                    </DIV>
+                    <DIV CLASS="col-3 text-center">
+                        <A HREF="#nor" CLASS="btn btn-primary m-1">NOR</A>
+                    </DIV>
+                    <DIV CLASS="col-3 text-center">
+                        <A HREF="#xor" CLASS="btn btn-primary m-1">XOR</A>
+                    </DIV>
+                    <DIV CLASS="col-3 text-center">
+                        <A HREF="#xnor" CLASS="btn btn-primary m-1">XNOR</A>
+                    </DIV>
+                    <DIV CLASS="col-3 text-center">
+                        <A HREF="#not" CLASS="btn btn-primary m-1">NOT</A>
+                    </DIV>
+                    <DIV CLASS="col-3 text-center">
+                        <A HREF="#buffer" CLASS="btn btn-primary m-1">BUFFER</A>
+                    </DIV>
+                </DIV>
+            </CENTER>
+
+            <HR>
+
+            <!-- AND Gate Section -->
+            <DIV ID="and" CLASS="gate-section my-4">
+                <H3>AND GATE</H3>
+                <DIV CLASS="row">
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Symbol:</B><BR>
+                        <IMG SRC="and_symbol.png" ALT="AND Symbol" CLASS="img-fluid">
+                    </DIV>
+                    <DIV CLASS="col-md-4">
+                        <B>Algebraic Function:</B> F = A &middot; B<BR><BR>
+                        <B>Truth Table:</B>
+                        <TABLE CLASS="table table-bordered">
+                            <THEAD>
+                                <TR><TH>A</TH><TH>B</TH><TH>F</TH></TR>
+                            </THEAD>
+                            <TBODY>
+                                <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+                                <TR><TD>0</TD><TD>1</TD><TD>0</TD></TR>
+                                <TR><TD>1</TD><TD>0</TD><TD>0</TD></TR>
+                                <TR><TD>1</TD><TD>1</TD><TD>1</TD></TR>
+                            </TBODY>
+                        </TABLE>
+                    </DIV>
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Circuit Implementation:</B><BR>
+                        <IMG SRC="and_circuit.png" ALT="AND Circuit" CLASS="img-fluid">
+                    </DIV>
+                </DIV>
+            </DIV>
+
+            <HR>
+
+            <!-- OR Gate Section -->
+            <DIV ID="or" CLASS="gate-section my-4">
+                <H3>OR GATE</H3>
+                <DIV CLASS="row">
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Symbol:</B><BR>
+                        <IMG SRC="or_symbol.png" ALT="OR Symbol" CLASS="img-fluid">
+                    </DIV>
+                    <DIV CLASS="col-md-4">
+                        <B>Algebraic Function:</B> F = A + B<BR><BR>
+                        <B>Truth Table:</B>
+                        <TABLE CLASS="table table-bordered">
+                            <THEAD>
+                                <TR><TH>A</TH><TH>B</TH><TH>F</TH></TR>
+                            </THEAD>
+                            <TBODY>
+                                <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+                                <TR><TD>0</TD><TD>1</TD><TD>1</TD></TR>
+                                <TR><TD>1</TD><TD>0</TD><TD>1</TD></TR>
+                                <TR><TD>1</TD><TD>1</TD><TD>1</TD></TR>
+                            </TBODY>
+                        </TABLE>
+                    </DIV>
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Circuit Implementation:</B><BR>
+                        <IMG SRC="or_circuit.png" ALT="OR Circuit" CLASS="img-fluid">
+                    </DIV>
+                </DIV>
+            </DIV>
+
+            <HR>
+
+            <!-- NAND Gate Section -->
+            <DIV ID="nand" CLASS="gate-section my-4">
+                <H3>NAND GATE</H3>
+                <DIV CLASS="row">
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Symbol:</B><BR>
+                        <IMG SRC="nand_symbol.png" ALT="NAND Symbol" CLASS="img-fluid">
+                    </DIV>
+                    <DIV CLASS="col-md-4">
+                        <B>Algebraic Function:</B> F = (A &middot; B)&#8211;<BR><BR>
+                        <B>Truth Table:</B>
+                        <TABLE CLASS="table table-bordered">
+                            <THEAD>
+                                <TR><TH>A</TH><TH>B</TH><TH>F</TH></TR>
+                            </THEAD>
+                            <TBODY>
+                                <TR><TD>0</TD><TD>0</TD><TD>1</TD></TR>
+                                <TR><TD>0</TD><TD>1</TD><TD>1</TD></TR>
+                                <TR><TD>1</TD><TD>0</TD><TD>1</TD></TR>
+                                <TR><TD>1</TD><TD>1</TD><TD>0</TD></TR>
+                            </TBODY>
+                        </TABLE>
+                    </DIV>
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Circuit Implementation:</B><BR>
+                        <IMG SRC="nand_circuit.png" ALT="NAND Circuit" CLASS="img-fluid">
+                    </DIV>
+                </DIV>
+            </DIV>
+
+            <HR>
+
+            <!-- NOR Gate Section -->
+            <DIV ID="nor" CLASS="gate-section my-4">
+                <H3>NOR GATE</H3>
+                <DIV CLASS="row">
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Symbol:</B><BR>
+                        <IMG SRC="nor_symbol.png" ALT="NOR Symbol" CLASS="img-fluid">
+                    </DIV>
+                    <DIV CLASS="col-md-4">
+                        <B>Algebraic Function:</B> F = (A + B)&#8211;<BR><BR>
+                        <B>Truth Table:</B>
+                        <TABLE CLASS="table table-bordered">
+                            <THEAD>
+                                <TR><TH>A</TH><TH>B</TH><TH>F</TH></TR>
+                            </THEAD>
+                            <TBODY>
+                                <TR><TD>0</TD><TD>0</TD><TD>1</TD></TR>
+                                <TR><TD>0</TD><TD>1</TD><TD>0</TD></TR>
+                                <TR><TD>1</TD><TD>0</TD><TD>0</TD></TR>
+                                <TR><TD>1</TD><TD>1</TD><TD>0</TD></TR>
+                            </TBODY>
+                        </TABLE>
+                    </DIV>
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Circuit Implementation:</B><BR>
+                        <IMG SRC="nor_circuit.png" ALT="NOR Circuit" CLASS="img-fluid">
+                    </DIV>
+                </DIV>
+            </DIV>
+
+            <HR>
+
+            <!-- XOR Gate Section -->
+            <DIV ID="xor" CLASS="gate-section my-4">
+                <H3>XOR GATE</H3>
+                <DIV CLASS="row">
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Symbol:</B><BR>
+                        <IMG SRC="xor_symbol.png" ALT="XOR Symbol" CLASS="img-fluid">
+                    </DIV>
+                    <DIV CLASS="col-md-4">
+                        <B>Algebraic Function:</B> F = A ⊕ B<BR><BR>
+                        <B>Truth Table:</B>
+                        <TABLE CLASS="table table-bordered">
+                            <THEAD>
+                                <TR><TH>A</TH><TH>B</TH><TH>F</TH></TR>
+                            </THEAD>
+                            <TBODY>
+                                <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+                                <TR><TD>0</TD><TD>1</TD><TD>1</TD></TR>
+                                <TR><TD>1</TD><TD>0</TD><TD>1</TD></TR>
+                                <TR><TD>1</TD><TD>1</TD><TD>0</TD></TR>
+                            </TBODY>
+                        </TABLE>
+                    </DIV>
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Circuit Implementation:</B><BR>
+                        <IMG SRC="xor_circuit.png" ALT="XOR Circuit" CLASS="img-fluid">
+                    </DIV>
+                </DIV>
+            </DIV>
+
+            <HR>
+
+            <!-- XNOR Gate Section -->
+            <DIV ID="xnor" CLASS="gate-section my-4">
+                <H3>XNOR GATE</H3>
+                <DIV CLASS="row">
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Symbol:</B><BR>
+                        <IMG SRC="xnor_symbol.png" ALT="XNOR Symbol" CLASS="img-fluid">
+                    </DIV>
+                    <DIV CLASS="col-md-4">
+                        <B>Algebraic Function:</B> F = (A ⊕ B)&#8211;<BR><BR>
+                        <B>Truth Table:</B>
+                        <TABLE CLASS="table table-bordered">
+                            <THEAD>
+                                <TR><TH>A</TH><TH>B</TH><TH>F</TH></TR>
+                            </THEAD>
+                            <TBODY>
+                                <TR><TD>0</TD><TD>0</TD><TD>1</TD></TR>
+                                <TR><TD>0</TD><TD>1</TD><TD>0</TD></TR>
+                                <TR><TD>1</TD><TD>0</TD><TD>0</TD></TR>
+                                <TR><TD>1</TD><TD>1</TD><TD>1</TD></TR>
+                            </TBODY>
+                        </TABLE>
+                    </DIV>
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Circuit Implementation:</B><BR>
+                        <IMG SRC="xnor_circuit.png" ALT="XNOR Circuit" CLASS="img-fluid">
+                    </DIV>
+                </DIV>
+            </DIV>
+
+            <HR>
+
+            <!-- NOT Gate Section -->
+            <DIV ID="not" CLASS="gate-section my-4">
+                <H3>NOT GATE (Inverter)</H3>
+                <DIV CLASS="row">
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Symbol:</B><BR>
+                        <IMG SRC="not_symbol.png" ALT="NOT Symbol" CLASS="img-fluid">
+                    </DIV>
+                    <DIV CLASS="col-md-4">
+                        <B>Algebraic Function:</B> F = ¬A<BR><BR>
+                        <B>Truth Table:</B>
+                        <TABLE CLASS="table table-bordered">
+                            <THEAD>
+                                <TR><TH>A</TH><TH>F</TH></TR>
+                            </THEAD>
+                            <TBODY>
+                                <TR><TD>0</TD><TD>1</TD></TR>
+                                <TR><TD>1</TD><TD>0</TD></TR>
+                            </TBODY>
+                        </TABLE>
+                    </DIV>
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Circuit Implementation:</B><BR>
+                        <IMG SRC="not_circuit.png" ALT="NOT Circuit" CLASS="img-fluid">
+                    </DIV>
+                </DIV>
+            </DIV>
+
+            <HR>
+
+            <!-- BUFFER Gate Section -->
+            <DIV ID="buffer" CLASS="gate-section my-4">
+                <H3>BUFFER</H3>
+                <DIV CLASS="row">
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Symbol:</B><BR>
+                        <IMG SRC="buffer_symbol.png" ALT="BUFFER Symbol" CLASS="img-fluid">
+                    </DIV>
+                    <DIV CLASS="col-md-4">
+                        <B>Algebraic Function:</B> F = A<BR><BR>
+                        <B>Truth Table:</B>
+                        <TABLE CLASS="table table-bordered">
+                            <THEAD>
+                                <TR><TH>A</TH><TH>F</TH></TR>
+                            </THEAD>
+                            <TBODY>
+                                <TR><TD>0</TD><TD>0</TD></TR>
+                                <TR><TD>1</TD><TD>1</TD></TR>
+                            </TBODY>
+                        </TABLE>
+                    </DIV>
+                    <DIV CLASS="col-md-4 text-center">
+                        <B>Circuit Implementation:</B><BR>
+                        <IMG SRC="buffer_circuit.png" ALT="BUFFER Circuit" CLASS="img-fluid">
+                    </DIV>
+                </DIV>
+            </DIV>
+
+        </DIV>
+    </BODY>
+</HTML>
