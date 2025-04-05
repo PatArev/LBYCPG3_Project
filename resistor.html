@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resistor Calculator</title>
+  <style>
+    body {
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana,sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .calculator {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    select, button {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .resistor {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto;
+      width: 100%;
+    }
+    .resistor-body {
+      width: 200px;
+      height: 40px;
+      background-color: #d4aa7d;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+    }
+    .band {
+      width: 10px;
+      height: 100%;
+      border-radius: 2px;
+    }
+    .result {
+      margin-top: 1rem;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h1>Resistor Calculator</h1>
+
+    <select id="bandType" onchange="toggleBandInput()">
+      <option value="3">3-Band Resistor</option>
+      <option value="4" selected>4-Band Resistor</option>
+    </select>
+
+    <div class="resistor">
+      <div class="resistor-body">
+        <div class="band" id="colorBand1"></div>
+        <div class="band" id="colorBand2"></div>
+        <div class="band" id="colorBand3"></div>
+        <div class="band" id="colorBandMultiplier"></div>
+      </div>
+    </div>
+
+    <select id="band1" onchange="updateBandColor('colorBand1', this.value)">
+      <option value="">Select Band 1</option>
+      <option value="black">Black</option>
+      <option value="brown">Brown</option>
+      <option value="red">Red</option>
+      <option value="orange">Orange</option>
+      <option value="yellow">Yellow</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="violet">Violet</option>
+      <option value="gray">Gray</option>
+      <option value="white">White</option>
+    </select>
+
+    <select id="band2" onchange="updateBandColor('colorBand2', this.value)">
+      <option value="">Select Band 2</option>
+      <option value="black">Black</option>
+      <option value="brown">Brown</option>
+      <option value="red">Red</option>
+      <option value="orange">Orange</option>
+      <option value="yellow">Yellow</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="violet">Violet</option>
+      <option value="gray">Gray</option>
+      <option value="white">White</option>
+    </select>
+
+    <select id="band3" onchange="updateBandColor('colorBand3', this.value)">
+      <option value="">Select Band 3</option>
+      <option value="black">Black</option>
+      <option value="brown">Brown</option>
+      <option value="red">Red</option>
+      <option value="orange">Orange</option>
+      <option value="yellow">Yellow</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="violet">Violet</option>
+      <option value="gray">Gray</option>
+      <option value="white">White</option>
+    </select>
+
+    <select id="multiplier" onchange="updateBandColor('colorBandMultiplier', this.value)">
+      <option value="">Select Multiplier</option>
+      <option value="black">Black (x1)</option>
+      <option value="brown">Brown (x10)</option>
+      <option value="red">Red (x100)</option>
+      <option value="orange">Orange (x1k)</option>
+      <option value="yellow">Yellow (x10k)</option>
+      <option value="green">Green (x100k)</option>
+      <option value="blue">Blue (x1M)</option>
+      <option value="violet">Violet (x10M)</option>
+      <option value="gold">Gold (x0.1)</option>
+      <option value="silver">Silver (x0.01)</option>
+    </select>
+
+    <button onclick="calculateResistance()">Calculate</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    const colorMap = {
+      black: '#000000',
+      brown: '#8B4513',
+      red: '#FF0000',
+      orange: '#FFA500',
+      yellow: '#FFFF00',
+      green: '#008000',
+      blue: '#0000FF',
+      violet: '#8F00FF',
+      gray: '#808080',
+      white: '#FFFFFF',
+      gold: '#FFD700',
+      silver: '#C0C0C0'
+    };
+
+    const digitMap = {
+      black: 0,
+      brown: 1,
+      red: 2,
+      orange: 3,
+      yellow: 4,
+      green: 5,
+      blue: 6,
+      violet: 7,
+      gray: 8,
+      white: 9
+    };
+
+    const multiplierMap = {
+      black: 1,
+      brown: 10,
+      red: 100,
+      orange: 1000,
+      yellow: 10000,
+      green: 100000,
+      blue: 1000000,
+      violet: 10000000,
+      gold: 0.1,
+      silver: 0.01
+    };
+
+    function toggleBandInput() {
+      const bandType = document.getElementById('bandType').value;
+      const band3 = document.getElementById('band3');
+      const band3Div = document.getElementById('colorBand3');
+      band3.style.display = bandType === '4' ? 'block' : 'none';
+      band3Div.style.display = bandType === '4' ? 'block' : 'none';
+    }
+
+    function updateBandColor(elementId, color) {
+      const element = document.getElementById(elementId);
+      element.style.backgroundColor = colorMap[color] || 'transparent';
+    }
+
+    function calculateResistance() {
+      const bandType = document.getElementById('bandType').value;
+      const band1 = digitMap[document.getElementById('band1').value];
+      const band2 = digitMap[document.getElementById('band2').value];
+      const band3 = digitMap[document.getElementById('band3').value];
+      const multiplier = multiplierMap[document.getElementById('multiplier').value];
+
+      if (band1 == null || band2 == null || multiplier == null || (bandType === '4' && band3 == null)) {
+        document.getElementById('result').innerText = 'Please select valid colors for all required bands.';
+        return;
+      }
+
+      let resistance;
+      if (bandType === '4') {
+        resistance = (band1 * 100 + band2 * 10 + band3) * multiplier;
+      } else {
+        resistance = (band1 * 10 + band2) * multiplier;
+      }
+
+      document.getElementById('result').innerText = `Resistance: ${resistance} ohms`;
+    }
+
+    window.onload = toggleBandInput;
+  </script>
+</body>
+</html>
