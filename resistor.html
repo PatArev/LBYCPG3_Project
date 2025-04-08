@@ -28,7 +28,7 @@
 
       // Validate input
       if (!band1 || !band2 || !multiplier) {
-        document.getElementById("result").innerHTML = "Please select all required bands.";
+        document.getElementById("ResValresult").innerHTML = "Please select all required bands.";
         return;
       }
 
@@ -46,7 +46,7 @@
       }
 
       // Display result
-      document.getElementById("result").innerHTML = `Resistance Value: <span>${formattedValue}</span>`;
+      document.getElementById("ResValresult").innerHTML = `Resistance Value: <span>${formattedValue}</span>`;
     }
   </script>
 </head>
@@ -129,7 +129,10 @@
 
       <div class="results">
         <h3>Results:</h3>
-        <p id="result">Resistance Value: <span></span></p>
+        <p id="ResValresult">Resistance Value: <span></span></p>
+        <p id="result">Tolerance: <span></span></p>
+        <p id="result">Power Rating: <span></span></p>
+        <p id="result">Preferred Series: <span></span></p>
       </div>
     </div>
   </div>
@@ -144,7 +147,7 @@
         <a href="capacitor.html">Capacitor Code Identifier</a>
       </div>
       <div class="box">
-        <a href="smd.html">SMD Component Identifier</a>
+        <a href="smd.html">Logic Gates</a>
       </div>
       <div class="box">
         <a href="transistor.html">Transistor & Diode Lookup</a>
