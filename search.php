@@ -35,7 +35,7 @@ if ($result->num_rows > 0) {
 } else {
   echo "<p>No results found for '$part_number'.</p>";
 }
-echo "<a href='index.html'>Search again</a></div>";
+echo "<a href='electronics.html'>Search again</a></div>";
 
 $conn->close();
 ?>
