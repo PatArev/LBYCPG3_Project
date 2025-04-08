@@ -1,3 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('backg.jpg'); /* Path to your background image */
+  background-size: cover; /* Ensure the image covers the entire screen */
+  background-position: center; /* Center the image */
+  background-attachment: fixed; /* Make the background fixed while scrolling */
+  color: var(--light-text); /* Ensure text is readable on the background */
+}
+
 /* Navbar */
 .navbar {
   background-color: var(--panel-dark);
@@ -38,23 +49,20 @@
 :root {
   --bg-dark: #141619;
   --panel-dark: #2C2E3A;
+  --panel-dblue: #080c38;
   --primary: #2C2E3A;
-  --primary-hover: #050A44;
+  --primary-hover: #080c38;
   --light-text: #B3B4BD;
 }
 
 /* Image Container */
 .image-container {
-  margin-top: 80px; /* Add spacing below the navbar */
+  margin-top: 140px; /* Add spacing below the navbar */
   text-align: center;
   padding: 2rem;
+  color: #B3B4BD; /* Set text color to the specified color */
 }
 
-.image-container img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
 
 /* Boxes Section */
 .container {
@@ -68,12 +76,12 @@
 }
 
 .box {
-  background-color: var(--panel-dark);
+  background-color: var(--panel-dblue);
   padding: 1.5rem;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 3px;
   width: 200px; /* Set a fixed width for the boxes */
-  height: 200px; /* Set a fixed height for the boxes */
+  height: 180px; /* Set a fixed height for the boxes */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,4 +112,5 @@
   width: 100%;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.4);
   text-align: center;
+  height: auto;
 }
