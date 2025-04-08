@@ -3,16 +3,7 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
-  color: var(--bg-dark); /* Ensure text is readable on the background */
-}
-
-:root {
-  --bg-dark: #141619;
-  --panel-dark: #2C2E3A;
-  --panel-dblue: #080c38;
-  --primary: #2C2E3A;
-  --primary-hover: #080c38;
-  --light-text: #B3B4BD;
+  color: var(--light-text); /* Ensure text is readable on the background */
 }
 
 /* Navbar */
@@ -52,10 +43,70 @@ body {
   background-color: var(--primary-hover);
 }
 
+:root {
+  --bg-dark: #141619;
+  --panel-dark: #2C2E3A;
+  --panel-dblue: #05082b;
+  --primary: #2C2E3A;
+  --primary-hover: #05082b;
+  --light-text: #B3B4BD;
+}
+
+/* Boxes Section */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  gap: 1rem; /* Add spacing between boxes */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  max-width: 1200px; /* Limit the container width */
+}
+
+.box {
+  background-color: var(--panel-dblue);
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 3px;
+  width: 200px; /* Set a fixed width for the boxes */
+  height: 180px; /* Set a fixed height for the boxes */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.box:hover {
+  transform: translateY(-5px); /* Add hover effect */
+  background-color: var(--primary-hover);
+}
+
+.box a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+/* Footer Container */
+.footer-container {
+  background-color: var(--panel-dark);
+  color: var(--light-text);
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  height: auto;
+}
+
 /* Calculator Section */
 .calculator-container {
-  margin-top: 100px;
-  padding: 2rem;
+  margin-top: 0px;
+  padding: 1.5rem;
   text-align: center;
 }
 
@@ -100,55 +151,4 @@ body {
 
 .results p {
   margin: 0.5rem 0;
-}
-
-/* Boxes Section */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem auto;
-  gap: 1rem; /* Add spacing between boxes */
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
-  max-width: 1200px; /* Limit the container width */
-}
-
-.box {
-  background-color: var(--panel-dblue);
-  padding: 1.5rem;
-  text-align: center;
-  border-radius: 3px;
-  width: 200px; /* Set a fixed width for the boxes */
-  height: 180px; /* Set a fixed height for the boxes */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s, background-color 0.3s;
-}
-
-.box:hover {
-  transform: translateY(-5px); /* Add hover effect */
-  background-color: var(--primary-hover);
-}
-
-.box a {
-  color: var(--light-text);
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 1rem;
-  display: inline-block;
-}
-
-/* Footer Container */
-.footer-container .box{
-  background-color: var(--panel-dark);
-  color: var(--light-text);
-  padding: 1rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.4);
-  text-align: center;
-  height: auto;
 }
