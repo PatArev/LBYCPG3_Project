@@ -16,3 +16,26 @@ BODY {
     TEXT-ALIGN: center;
     MARGIN-bottom: 20px;
 }
+
+.Home {
+    POSITION: fixed; 
+    TOP: 10px;  
+    LEFT: 10px;  
+    FONT-SIZE: 17px;
+    COLOR: #007bff;
+    TEXT-DECORATION: underline;  
+    Z-INDEX: 9999; 
+    PADDING: 10px;
+}
+
+.Home:hover {
+    COLOR: #0056b3; 
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+}
